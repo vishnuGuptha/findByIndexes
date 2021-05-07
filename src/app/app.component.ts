@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,25 +7,22 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   title = 'findByIndex';
-
   CreateUser: string = "Enter Index Number"
-
-  userlist: number[] = [2, 4, 5, 7, 8, 3, 5, 98];
-
   indexNumber: number = 0;
-
-
-
   value: any = 0;
 
-  message: string = " Entered index Value dosen't exist"
-
-
   clicked() {
-    if (this.indexNumber <= 7) {
-      this.value = this.userlist[this.indexNumber];
-    } else {
-      this.value = this.message;
+    this.value = ''
+  if(this.indexNumber > 0) {
+    if(this.indexNumber == 1) {
+      this.value = 2;
+    }else if(this.indexNumber % 2 == 0) {
+      this.value = (this.indexNumber * this.indexNumber) - 1;
+    }else {
+      this.value = (this.indexNumber * this.indexNumber) + 1;
     }
+  }else {
+     this.value = 1
   }
+}
 }
